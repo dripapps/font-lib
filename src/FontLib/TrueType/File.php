@@ -535,6 +535,16 @@ class File extends BinaryStream
     }
 
     /**
+     * Get font name
+     *
+     * @return string|null
+     */
+    function getFontFamily()
+    {
+        return $this->getNameTableString(name::NAME_PREFERRE_FAMILY) || $this->getFontName();
+    }
+
+    /**
      * Get font subfamily
      *
      * @return string|null
